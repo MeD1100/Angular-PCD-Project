@@ -1,0 +1,104 @@
+.banks{
+  display: flex;
+  justify-content: center;
+}
+
+.bank > mat-card > img{
+  object-fit: contain;
+  max-height: 150px;
+  width: 300px;
+}
+
+.bank > mat-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mat-card{
+  max-height: 100%;
+}
+
+.mat-card-avatar{
+  background-size: cover;
+}
+
+.mat-card-actions{
+  display: flex;
+}
+
+.flex-spacer{
+  width: 100%;
+}
+
+
+/*
+
+.bank > mat-card > button{
+  margin-top: 20px;
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #a88134 #9c7e31 #846a29;
+
+}*/
+
+:host{
+  z-index: 9;
+  position: absolute;
+}
+
+#mat-card-actions-spec{
+  width: 30%;
+}
+
+/*Hover for cards*/
+
+
+button:hover {
+	background: black;
+	color: #ffffff;
+	box-shadow: inset 0 0 0 3px #0f0f0f;
+}
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+button:hover {
+	animation: bounce 1s;
+}
+
+.mat-card:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 2s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

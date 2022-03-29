@@ -1,0 +1,44 @@
+.navbar-dark .navbar-nav .nav-link
+  {
+    color: var(--secondary-color);
+  }
+
+  .navbar-dark .navbar-nav .nav-link.active-link
+  {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+  #gray-disabled
+  {
+    color: rgb(94, 94, 94);
+    background-color: rgb(48, 48, 48);
+  }
+
+  .main-navigation {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+} 
+
+  .header_bottom{
+    background-image: none;
+    background-color: #fcfcfc;
+  }
+  /*height: 4%;*/
+
+
+ .header_bottom_text{
+    flex: 1 auto;
+  }
+
+  .header_bottom_buttons{
+    flex: 1 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  :host {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+  }  
