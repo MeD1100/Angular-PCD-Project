@@ -23,6 +23,8 @@ import { DashboardAllComponent } from './dashboard/dashboard-all/dashboard-all.c
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DragScrollModule } from 'ngx-drag-scroll';
+import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,11 +45,16 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     DragScrollModule,
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyBzpYcXpT2lLSHW90qVD_LLIbIfW6418a8',
+      libraries: ['places']
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],
