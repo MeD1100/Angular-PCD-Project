@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BanksapiService {
 
-  url = "https://jsonplaceholder.typicode.com/posts"
+  url = "assets/data/banks.json"
 
   constructor(private http: HttpClient) { }
 

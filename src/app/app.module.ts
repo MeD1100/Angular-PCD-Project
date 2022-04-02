@@ -25,6 +25,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     DragScrollModule,
     MatCardModule,
     MatButtonModule,
+    CommonModule,
     MatIconModule,
     MDBBootstrapModule.forRoot(),
     AgmCoreModule.forRoot({

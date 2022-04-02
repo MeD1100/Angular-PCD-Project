@@ -18,3 +18,39 @@
     </mat-card>
   </div>
 </div> -->
+
+<mdb-carousel class=" banks flex-spacer d-none d-xl-block" [animation]="'slide'">
+  <mdb-carousel-item class="bank opacity-50">
+    <!--First page-->
+          <mat-card class="background">
+            <mat-card-header>
+              <img mat-card-avatar src="https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+              <mat-card-title>Banks</mat-card-title>
+              <mat-card-subtitle>-List of banks we're working with-</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+      </mdb-carousel-item>
+
+    <mdb-carousel-item class="bank opacity-75" *ngFor="let item of data">
+  <!--STB-->
+        <mat-card>
+          <mat-card-header>
+            <img mat-card-avatar src="{{item.avatar}}">
+            <mat-card-title>{{item.title}}</mat-card-title>
+            <mat-card-subtitle>{{item.subtitle}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="{{item.image}}">
+          <mat-card-content>
+            <p>{{item.content}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="flex-spacer-spec">
+              <a href="{{item.href}}" target="_blank"><button type="button" class="btn btn-warning">Read more</button></a>
+            </div>
+          </mat-card-actions>
+          <div class="footer-banks">
+
+          </div>
+        </mat-card>
+    </mdb-carousel-item>
+</mdb-carousel>

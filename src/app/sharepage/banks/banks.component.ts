@@ -7,11 +7,13 @@ import { BanksapiService } from 'src/app/service/banksapi.service';
 })
 export class BanksComponent implements OnInit {
 
+  data: any;
   constructor(private banksapiService: BanksapiService) { }
 
   ngOnInit(): void {
     this.banksapiService.getBanks().subscribe((result)=>{
       console.warn("result",result);
+      this.data = result;
     });
   }
 
