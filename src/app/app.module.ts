@@ -18,7 +18,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@Angular/material/icon';
 import {MatButtonModule} from '@Angular/material/button';
 import { BanksComponent } from './sharepage/banks/banks.component';
-import { DashboardAllComponent } from './dashboard/dashboard-all/dashboard-all.component';
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -26,6 +25,14 @@ import { DragScrollModule } from 'ngx-drag-scroll';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuComponent } from './pages/profile/menu/menu.component';
+import { PageStatistiqueComponent } from './pages/profile/page-statistique/page-statistique.component';
+import { HeaderComponent } from './pages/profile/header/header/header.component';
+import { DetailArticleComponent } from './pages/profile/detail-article/detail-article.component';
+import { NouvelArticleComponent } from './pages/profile/articles/articles/nouvel-article/nouvel-article.component';
+import { MvtsldComponent } from './pages/profile/Mouvement-des-soldes/mvtsld/mvtsld.component';
+import { ArticlesComponent } from './pages/profile/articles/articles/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +47,13 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     BannerComponent,
     BanksComponent,
-    DashboardAllComponent
+    MenuComponent,
+    PageStatistiqueComponent,
+    HeaderComponent,
+    ArticlesComponent,
+    DetailArticleComponent,
+    NouvelArticleComponent,
+    MvtsldComponent
   ],
   imports: [
     AppRoutingModule,
@@ -50,6 +63,8 @@ import { CommonModule } from '@angular/common';
     DragScrollModule,
     MatCardModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     MatIconModule,
     MDBBootstrapModule.forRoot(),

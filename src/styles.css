@@ -16,9 +16,34 @@ body
 {
   font-family: Arial, Helvetica, sans-serif;
   height: 300vh;
+  background-color: #eff2f5 !important;
 }
 
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.background-grey{
+  background-color: #eff2f5 !important;
+}
+
+.border-none{
+  border: none !important;
+}
+
+.min-height-80{
+  min-height: 80px;
+}
+
+.border-right{
+  border-radius: 2px solid #9ca1a6;
+}
+
+.custom-border{
+  border: solid #9ca1a6;
+  border-radius: 5px;
+}
+
+.blue-color{
+  color: #037bfe;
+}
