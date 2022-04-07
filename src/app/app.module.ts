@@ -29,10 +29,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './pages/profile/menu/menu.component';
 import { PageStatistiqueComponent } from './pages/profile/page-statistique/page-statistique.component';
 import { HeaderComponent } from './pages/profile/header/header/header.component';
-import { DetailArticleComponent } from './pages/profile/detail-article/detail-article.component';
+import { DetailArticleComponent } from './pages/profile/articles/detail-article/detail-article.component';
 import { NouvelArticleComponent } from './pages/profile/articles/articles/nouvel-article/nouvel-article.component';
-import { MvtsldComponent } from './pages/profile/Mouvement-des-soldes/mvtsld/mvtsld.component';
 import { ArticlesComponent } from './pages/profile/articles/articles/articles/articles.component';
+import { MvtsldComponent } from './pages/profile/mvtsld/mvtsld.component';
+import { DetailMvtsldComponent } from './pages/profile/mvtsld/detail-mvtsld/detail-mvtsld.component';
+import { PaginationComponent } from './pages/profile/Pagination/pagination/pagination.component';
+import { ClientComponent } from './pages/profile/clients/client/client.component';
+import { DetailClienComponent } from './pages/profile/clients/detail-clien/detail-clien.component';
+import { DetailMvtsldHistoComponent } from './pages/profile/mvtsld/detail-mvtsld-histo/detail-mvtsld-histo.component';
+import { NouveauClientComponent } from './pages/profile/clients/nouveau-client/nouveau-client.component';
+import { DetailCmdClientComponent } from './pages/profile/clients/detail-cmd-client/detail-cmd-client.component';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +61,14 @@ import { ArticlesComponent } from './pages/profile/articles/articles/articles/ar
     ArticlesComponent,
     DetailArticleComponent,
     NouvelArticleComponent,
-    MvtsldComponent
+    MvtsldComponent,
+    DetailMvtsldComponent,
+    PaginationComponent,
+    DetailMvtsldHistoComponent,
+    DetailClienComponent,
+    ClientComponent,
+    NouveauClientComponent,
+    DetailCmdClientComponent
   ],
   imports: [
     AppRoutingModule,

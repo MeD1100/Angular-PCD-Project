@@ -9,7 +9,9 @@ import { LoginComponent } from './authentification/login/login.component';
 import { PageStatistiqueComponent } from './pages/profile/page-statistique/page-statistique.component';
 import { NouvelArticleComponent } from './pages/profile/articles/articles/nouvel-article/nouvel-article.component';
 import { ArticlesComponent } from './pages/profile/articles/articles/articles/articles.component';
-import { MvtsldComponent } from './pages/profile/Mouvement-des-soldes/mvtsld/mvtsld.component';
+import { MvtsldComponent } from './pages/profile/mvtsld/mvtsld.component';
+import { ClientComponent } from './pages/profile/clients/client/client.component';
+import { NouveauClientComponent } from './pages/profile/clients/nouveau-client/nouveau-client.component';
 
 const routes: Routes = [
   {path:'home', component: HomeComponent}, //home
@@ -31,7 +33,15 @@ const routes: Routes = [
      {
        path: 'mvtsld',
        component: MvtsldComponent
-     }
+     },
+     {
+      path: 'clients',
+      component: ClientComponent
+     },
+     {
+      path: 'nouveauclient',
+      component: NouveauClientComponent
+    }
    ]},
   {path:'contact', component: ContactComponent},
   {path:'about', component: AboutComponent},
