@@ -4,20 +4,8 @@
       <h1>Liste des articles</h1>
     </div>
     <div class="col-md-4 text-right">
-      <div class="row">
-        <div class="col-md-4">
-          <button type="button" class="btn btn-warning">
-            <i class="fas fa-cloud-arrow-up"></i>&nbsp;Importer</button>
-        </div>
-        <div class="col-md-4">
-          <button type="button" class="btn btn-success">
-            <i class="fas fa-cloud-arrow-down"></i>&nbsp;Exporter</button>
-        </div>
-        <div class="col-md-4">
-          <a routerLink="/profile/nouvelarticle"><button type="button" class="btn btn-primary">
-            <i class="fas fa-plus"></i>&nbsp;Nouveau</button></a>
-        </div>
-      </div>
+      <app-boutton-action [isImporterVisible]="false" (clickEvent) = "nouvelArticle()">
+      </app-boutton-action>
     </div>
   </div>
   <div class="col m-3">

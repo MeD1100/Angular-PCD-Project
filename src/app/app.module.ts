@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { FooterComponent } from './sharepage/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SignupComponent } from './authentification/signup/signup.component';
@@ -40,6 +39,17 @@ import { DetailClienComponent } from './pages/profile/clients/detail-clien/detai
 import { DetailMvtsldHistoComponent } from './pages/profile/mvtsld/detail-mvtsld-histo/detail-mvtsld-histo.component';
 import { NouveauClientComponent } from './pages/profile/clients/nouveau-client/nouveau-client.component';
 import { DetailCmdClientComponent } from './pages/profile/clients/detail-cmd-client/detail-cmd-client.component';
+import { DetailCmdClientHistoComponent } from './pages/profile/clients/detail-cmd-client-histo/detail-cmd-client-histo.component';
+import { ClientcmdComponent } from './pages/profile/clients/clientcmd.component';
+import { BouttonActionComponent } from './pages/profile/boutton-action/boutton-action.component';
+import { CategoriesComponent } from './pages/profile/categories/categories.component';
+import { NouvelleCategorieComponent } from './pages/profile/categories/nouvelle-categorie/nouvelle-categorie.component';
+import { ChangerMdpComponent } from './pages/profile/changer-mdp/changer-mdp.component';
+import { PageProfilComponent } from './pages/profile/page-profil/page-profil.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { AdminComponent } from './pages/profile/admins/admin/admin.component';
+import { DetailAdminComponent } from './pages/profile/admins/detail-admin/detail-admin.component';
+import { NouveauAdminComponent } from './pages/profile/admins/nouveau-admin/nouveau-admin.component';
 
 
 @NgModule({
@@ -68,7 +78,17 @@ import { DetailCmdClientComponent } from './pages/profile/clients/detail-cmd-cli
     DetailClienComponent,
     ClientComponent,
     NouveauClientComponent,
-    DetailCmdClientComponent
+    DetailCmdClientComponent,
+    DetailCmdClientHistoComponent,
+    ClientcmdComponent,
+    BouttonActionComponent,
+    CategoriesComponent,
+    NouvelleCategorieComponent,
+    ChangerMdpComponent,
+    PageProfilComponent,
+    AdminComponent,
+    DetailAdminComponent,
+    NouveauAdminComponent
   ],
   imports: [
     AppRoutingModule,

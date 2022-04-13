@@ -1,0 +1,80 @@
+<div class="col">
+  <div class="row  m-3">
+    <div class="col-md-8 p-0">
+      <h1>Historique des clients</h1>
+    </div>
+    <div class="col-md-4 text-right">
+      <div class="row">
+        <app-boutton-action [isImporterVisible]="false" [isNouveauVisible]="false" [isExporterVisible]="false"></app-boutton-action>
+      </div>
+    </div>
+  </div>
+  <div class="col m-3">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <div class="accordion-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <app-detail-cmd-client></app-detail-cmd-client>
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="max-height: 300px; overflow-y: scroll;">
+          <div class="card-body">
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-md-6 text-left">7 articles commandes</div>
+            <div class="col-md-6 text-right">Total commandes: 123</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <div class="accordion-header" id="headingOne1">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne">
+              <app-detail-cmd-client></app-detail-cmd-client>
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne1" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="max-height: 300px; overflow-y: scroll;">
+          <div class="card-body">
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+            <app-detail-cmd-client-histo></app-detail-cmd-client-histo>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-md-6 text-left">7 articles commandes</div>
+            <div class="col-md-6 text-right">Total commandes: 123</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  
+  <div class="row mb-3">
+    <div class="col-md-12 text-center">
+      <app-pagination></app-pagination>
+    </div>
+  </div>
+
+</div>

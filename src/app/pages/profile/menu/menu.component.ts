@@ -67,27 +67,21 @@ export class MenuComponent implements OnInit {
           id: '32',
           titre: 'Commandes clients',
           icon: 'fas fa-shopping-basket',
-          url: ''
+          url: 'profile/clientcmd'
         }
       ]
     },
     {
       id: '4',
-      titre: 'Fournisseurs',
-      icon: 'fas fa-users',
-      url: '',
+      titre: 'Admins',
+      icon: 'fas fa-users-cog',
+      url: 'profile/admins',
       sousMenu: [
         {
           id: '41',
-          titre: 'Fournisseurs',
-          icon: 'fas fa-users',
-          url: ''
-        },
-        {
-          id: '42',
-          titre: 'Commandes fournisseurs',
-          icon: 'fas fa-truck',
-          url: ''
+          titre: 'Administrateurs',
+          icon: 'fas fa-users-cog',
+          url: 'profile/admins'
         }
       ]
     },
@@ -101,7 +95,7 @@ export class MenuComponent implements OnInit {
           id: '51',
           titre: 'Categories',
           icon: 'fas fa-tools',
-          url: ''
+          url: 'profile/categories'
         },
         {
           id: '52',
@@ -113,13 +107,20 @@ export class MenuComponent implements OnInit {
     }
   ];
 
+  private lastSelectedMenu: Menu | undefined
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  navigate(url?: string) : void{
-    this.router.navigate([url]);
+  navigate(menu: Menu) : void{
+    if (this.lastSelectedMenu){
+      this.lastSelectedMenu.active = false;
+    }
+    menu.active = true;
+    this.lastSelectedMenu = menu;
+    this.router.navigate([menu.url])
   }
 
 }
