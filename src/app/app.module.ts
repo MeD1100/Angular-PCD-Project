@@ -51,7 +51,6 @@ import { AdminComponent } from './pages/profile/admins/admin/admin.component';
 import { DetailAdminComponent } from './pages/profile/admins/detail-admin/detail-admin.component';
 import { NouveauAdminComponent } from './pages/profile/admins/nouveau-admin/nouveau-admin.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

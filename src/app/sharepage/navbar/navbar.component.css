@@ -3,12 +3,6 @@
     color: var(--secondary-color);
   }
 
-  .navbar-dark .navbar-nav .nav-link.active-link
-  {
-    color: var(--primary-color);
-    text-decoration: underline;
-  }
-
   #gray-disabled
   {
     color: rgb(94, 94, 94);
@@ -20,15 +14,9 @@
 }
 
   .header_bottom{
-    background-image: none;
     background-color: #fcfcfc;
   }
   /*height: 4%;*/
-
-
- .header_bottom_text{
-    flex: 1 auto;
-  }
 
   .header_bottom_buttons{
     flex: 1 auto;
@@ -43,3 +31,10 @@
       left: 0;
   }
 */
+
+.nav-link:hover {
+  background-color: #343434;
+}
+.nav-link:focus{
+  background:#343434;
+}

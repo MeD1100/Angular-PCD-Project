@@ -58,7 +58,7 @@ background-color: #0f0f0f;
 }*/
 
 :host{
-  z-index: 9;
+  z-index: 4;
   position: absolute;
 }
 

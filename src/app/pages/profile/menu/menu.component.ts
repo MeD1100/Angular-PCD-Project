@@ -96,19 +96,13 @@ export class MenuComponent implements OnInit {
           titre: 'Categories',
           icon: 'fas fa-tools',
           url: 'profile/categories'
-        },
-        {
-          id: '52',
-          titre: 'Utilisateurs',
-          icon: 'fas fa-users-cog',
-          url: ''
         }
       ]
     }
   ];
 
   private lastSelectedMenu: Menu | undefined
-  
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {

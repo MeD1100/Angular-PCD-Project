@@ -1,47 +1,74 @@
 <div class="col">
-  <div class="row  m-3">
+  <div class="row m-3">
     <div class="col-md-8 p-0">
-      <h1>Liste des categories</h1>
-    </div>
-    <div class="col-md-4 text-right">
-      <app-boutton-action (clickEvent) = "nouvelleCategorie()">
-      </app-boutton-action>
+      <h1>Liste des categories de chèques</h1>
     </div>
   </div>
   <div class="col">
     <div class="row custom-border mb-3 p-3">
       <div class="col-md-3 custom-border-right">
-        Code categorie
+        <strong>Chèque barré</strong>
       </div>
-      <div class="col-md-9">
-        Description categorie
+      <div class="col-md-6">
+        Chèque usuellement utilisé , sur lequel sont tracés deux traits parallèles en bais en haut et à gauche. Ce chèque ne peut être encaissé que par une personne qui dispose d'un compte bancaire. On dit que le chèque est « non endossable, sauf au profit d'une banque ».
+      </div>
+      <div class="col-md-3 text-center">
+        <button type="button" class="btn btn-info mr-3" (click)="openModal1()">Example</button>
+        <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display1}">
+          <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                      <div class="modal-header">
+                            <h4 class="modal-title"><strong>Chèque barré</strong></h4>
+                            <button type="button" class="close" aria-label="Close" (click)="onCloseHandled1()"><span aria-hidden="true">&times;</span></button>
+                      </div>
+                      <div class="modal-body hover-overlay">
+                          <img class= "img-thumbnail" src="assets/images/barré.jpg" alt="chèque barré exemple">
+                      </div>
+                      <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" (click)="onCloseHandled1()" >Close</button>
+                      </div>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="row custom-border mb-3 p-3">
+    <div class="row custom-border p-3">
       <div class="col-md-3 custom-border-right">
-        Code categorie
+        <strong>Chèque NON barré</strong>
       </div>
-      <div class="col-md-3">
-        Description categorie
+      <div class="col-md-6">
+        Le chèque non barré est "payable au guichet". Cela signifie que son bénéficiaire peut disposer de l'argent correspondant en réclamant à l'agence bancaire de l'émetteur du chèque l'équivalent en espèces.
+      </div>
+      <div class="col-md-3 text-center">
+        <button type="button" class="btn btn-info mr-3" (click)="openModal2()">Example</button>
+        <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display2}">
+          <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                      <div class="modal-header">
+                            <h4 class="modal-title"><strong>Chèque NON barré</strong></h4>
+                            <button type="button" class="close" aria-label="Close" (click)="onCloseHandled2()"><span aria-hidden="true">&times;</span></button>
+                      </div>
+                      <div class="modal-body hover-overlay">
+                          <img class= "img-thumbnail" src="assets/images/non barré.jpg" alt="chèque barré exemple">
+                      </div>
+                      <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" (click)="onCloseHandled2()" >Close</button>
+                      </div>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="row custom-border mb-3 p-3">
-      <div class="col-md-3 custom-border-right">
-        Code categorie
+    <div class="row mt-3">
+      <div class="col text-right">
+        <a target="_blank" href="https://www.01banque-en-ligne.fr/guide/difference-cheque-barre-et-cheque-non-barre/"><button type="button" class="btn btn-warning">Read more</button></a>
       </div>
-      <div class="col-md-3">
-        Description categorie
-      </div>
-    </div>
-  </div>
-  <div class="row mb-3">
-    <div class="col-md-12 text-center">
-      <app-pagination></app-pagination>
     </div>
   </div>
 
 </div>
+
+
+

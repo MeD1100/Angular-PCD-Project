@@ -1,0 +1,1456 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger Api Documentation for Bank check cashing application",
+    "version" : "0.0.1-SNAPSHOT",
+    "title" : "Swagger Api Documentation for Bank check cashing application",
+    "contact" : {
+      "name" : "Mohamed Rhimi",
+      "url" : "https://www.linkedin.com/in/mohamed-rhimi-3171b71ba",
+      "email" : "mohamed.rhimi@ensi-uma.tn"
+    }
+  },
+  "basePath" : "http://localhost:8083",
+  "tags" : [ {
+    "name" : "onlinecheckcashingv1categories"
+  }, {
+    "name" : "onlinecheckcashingv1cheques"
+  }, {
+    "name" : "onlinecheckcashingv1commandesadmins"
+  }, {
+    "name" : "onlinecheckcashingv1commandesclients"
+  }, {
+    "name" : "onlinecheckcashingv1mvtsld"
+  }, {
+    "name" : "onlinecheckcashingv1photos"
+  } ],
+  "paths" : {
+    "/onlinecheckcashing/v1/admins/all" : {
+      "get" : {
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/AdminDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/admins/create" : {
+      "post" : {
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/admins/delete/{idAdmins}" : {
+      "delete" : {
+        "operationId" : "delete",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/admins/{idAdmin}" : {
+      "get" : {
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/banques/create" : {
+      "post" : {
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BanqueDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/banques/delete/{idBanque}" : {
+      "delete" : {
+        "operationId" : "delete",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/banques/{idBanque}" : {
+      "get" : {
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BanqueDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/categories/create" : {
+      "post" : {
+        "summary" : "Enregistrer une catégorie",
+        "description" : "Cette méthode permet d'enregistrer ou modifier une categorie",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet categorie cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/CategoryDto"
+            }
+          },
+          "400" : {
+            "description" : "L'objet categorie n'est pas valide"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/categories/delete/{idCategory}" : {
+      "delete" : {
+        "summary" : "Supprimer une categorie",
+        "description" : "Cette méthode permet de supprimer une categorie par ID",
+        "operationId" : "delete",
+        "responses" : {
+          "200" : {
+            "description" : "La categoie a ete supprime"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/all" : {
+      "get" : {
+        "tags" : [ "onlinecheckcashingv1cheques" ],
+        "summary" : "Renvoie la liste des cheques",
+        "description" : "Cette méthode permet de chercher et renvoyer la liste des cheques qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "La liste des cheques / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ChequeDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/create" : {
+      "post" : {
+        "tags" : [ "onlinecheckcashingv1cheques" ],
+        "summary" : "Enregistrer un cheque",
+        "description" : "Cette méthode permet d'enregistrer ou modifier un cheque",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ChequeDto"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet cheque cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/ChequeDto"
+            }
+          },
+          "400" : {
+            "description" : "L'objet cheque n'est pas valide"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/delete/{idCheque}" : {
+      "delete" : {
+        "tags" : [ "onlinecheckcashingv1cheques" ],
+        "summary" : "Supprimer un cheque",
+        "description" : "Cette méthode permet de supprimer un cheque par ID",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idCheque",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Le cheque a ete supprime"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/filter/category/{idCategory}" : {
+      "get" : {
+        "operationId" : "findAllChequeByIdCategory",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ChequeDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/historique/commandeadmin/{idCheque}" : {
+      "get" : {
+        "operationId" : "findHistoriqueCommandeAdmin",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/LigneCommandeAdminDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/historique/commandeclient/{idCheque}" : {
+      "get" : {
+        "operationId" : "findHistoriqueCommandeClient",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/LigneCommandeClientDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/historique/vente/{idCheque}" : {
+      "get" : {
+        "operationId" : "findHistoriqueVentes",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/LigneVenteDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/{codeCheque}" : {
+      "get" : {
+        "summary" : "Rechercher un cheque par CODE",
+        "description" : "Cette méthode permet de chercher un cheque par son CODE",
+        "operationId" : "findByCodeCheque",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Le cheque a ete trouve dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/ChequeDto"
+            }
+          },
+          "404" : {
+            "description" : "Aucun cheque n'existe dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/cheques/{idCheque}" : {
+      "get" : {
+        "tags" : [ "onlinecheckcashingv1cheques" ],
+        "summary" : "Rechercher un cheque par ID",
+        "description" : "Cette méthode permet de chercher un cheque par son ID",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCheque",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Le cheque a ete trouve dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/ChequeDto"
+            }
+          },
+          "404" : {
+            "description" : "Aucun cheque n'existe dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/clients/all" : {
+      "get" : {
+        "summary" : "Renvoie la liste des clients",
+        "description" : "Cette méthode permet de chercher et renvoyer la liste des clients qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "La liste des clients / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ClientDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/clients/create" : {
+      "post" : {
+        "summary" : "Enregistrer un client",
+        "description" : "Cette méthode permet d'enregistrer ou modifier un client",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet client cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/ClientDto"
+            }
+          },
+          "400" : {
+            "description" : "L'objet client n'est pas valide"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/clients/delete/{idClient}" : {
+      "delete" : {
+        "summary" : "Supprimer un client",
+        "description" : "Cette méthode permet de supprimer un client par ID",
+        "operationId" : "delete",
+        "responses" : {
+          "200" : {
+            "description" : "Le client a ete supprime"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/clients/{idClient}" : {
+      "get" : {
+        "summary" : "Rechercher un client par ID",
+        "description" : "Cette méthode permet de chercher un client par son ID",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Le client a ete trouve dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/ClientDto"
+            }
+          },
+          "404" : {
+            "description" : "Aucun client n'existe dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/all" : {
+      "get" : {
+        "tags" : [ "onlinecheckcashingv1commandesadmins" ],
+        "operationId" : "findAll",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/CommandeAdminDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/create" : {
+      "post" : {
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeAdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/delete/cheque/{idCommande}/{idLigneCommande}" : {
+      "delete" : {
+        "operationId" : "deleteAdmin",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeAdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/delete/{idCommandeAdmin}" : {
+      "delete" : {
+        "tags" : [ "onlinecheckcashingv1commandesadmins" ],
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idCommandeAdmin",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/lignescommande/{idCommande}" : {
+      "get" : {
+        "tags" : [ "onlinecheckcashingv1commandesadmins" ],
+        "operationId" : "findAllLignesCommandesAdminByCommandeAdminId",
+        "parameters" : [ {
+          "name" : "idCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/LigneCommandeAdminDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/update/admin/{idCommande}/{idAdmin}" : {
+      "patch" : {
+        "operationId" : "updateAdmin",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeAdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/update/cheque/{idCommande}/{idLigneCommande}/{idCheque}" : {
+      "patch" : {
+        "tags" : [ "onlinecheckcashingv1commandesadmins" ],
+        "operationId" : "updateCheque",
+        "parameters" : [ {
+          "name" : "idCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "idLigneCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "idCheque",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeAdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/update/etat/{idCommande}/{etatCommande}" : {
+      "patch" : {
+        "operationId" : "updateEtatCommande",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeAdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/update/quantite/{idCommande}/{idLigneCommande}/{quantite}" : {
+      "patch" : {
+        "tags" : [ "onlinecheckcashingv1commandesadmins" ],
+        "operationId" : "updateQuantiteCommande",
+        "parameters" : [ {
+          "name" : "idCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "etatCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "quantite",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeAdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesadmins/{idCommandeAdmin}" : {
+      "get" : {
+        "tags" : [ "onlinecheckcashingv1commandesadmins" ],
+        "operationId" : "findById",
+        "parameters" : [ {
+          "name" : "idCommandeAdmin",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeAdminDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/all" : {
+      "get" : {
+        "tags" : [ "onlinecheckcashingv1commandesclients" ],
+        "operationId" : "findAll",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/CommandeClientDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/create" : {
+      "post" : {
+        "operationId" : "save",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/delete/cheque/{idCommande}/{idLigneCommande}" : {
+      "delete" : {
+        "tags" : [ "onlinecheckcashingv1commandesclients" ],
+        "operationId" : "deleteClient",
+        "parameters" : [ {
+          "name" : "idCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "idLigneCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/delete/{idCommandeClient}" : {
+      "delete" : {
+        "operationId" : "delete",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/lignescommande/{idCommande}" : {
+      "get" : {
+        "operationId" : "findAllLignesCommandesClientByCommandeClientId",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/LigneCommandeClientDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/update/cheque/{idCommande}/{idLigneCommande}/{idCheque}" : {
+      "patch" : {
+        "operationId" : "updateCheque",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/update/client/{idCommande}/{idClient}" : {
+      "patch" : {
+        "tags" : [ "onlinecheckcashingv1commandesclients" ],
+        "operationId" : "updateClient",
+        "parameters" : [ {
+          "name" : "idCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "idClient",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/update/etat/{idCommande}/{etatCommande}" : {
+      "patch" : {
+        "operationId" : "updateEtatCommande",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/update/quantite/{idCommande}/{idLigneCommande}/{quantite}" : {
+      "patch" : {
+        "tags" : [ "onlinecheckcashingv1commandesclients" ],
+        "operationId" : "updateQuantiteCommande",
+        "parameters" : [ {
+          "name" : "idCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "etatCommande",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "quantite",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/commandesclients/{idCommandeClient}" : {
+      "get" : {
+        "tags" : [ "onlinecheckcashingv1commandesclients" ],
+        "operationId" : "findById",
+        "parameters" : [ {
+          "name" : "idCommandeClient",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CommandeClientDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/mvtsld/correctionneg" : {
+      "post" : {
+        "tags" : [ "onlinecheckcashingv1mvtsld" ],
+        "operationId" : "correctionStockNeg",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/MvtSldDto"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/MvtSldDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/mvtsld/correctionpos" : {
+      "post" : {
+        "operationId" : "correctionStockPos",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/MvtSldDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/mvtsld/entree" : {
+      "post" : {
+        "operationId" : "entreeStock",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/MvtSldDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/mvtsld/filter/cheque/{idCheque}" : {
+      "get" : {
+        "operationId" : "mvtSldCheque",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/MvtSldDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/mvtsld/sortie" : {
+      "post" : {
+        "operationId" : "sortieStock",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/MvtSldDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/mvtsld/stockreel/{idCheque}" : {
+      "get" : {
+        "operationId" : "stockReelCheque",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "number"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/photos/{id}/{title}/{context}" : {
+      "post" : {
+        "tags" : [ "onlinecheckcashingv1photos" ],
+        "operationId" : "savePhoto",
+        "parameters" : [ {
+          "name" : "file",
+          "in" : "formData",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/utilisateur/{idUtilisateur}" : {
+      "get" : {
+        "summary" : "Rechercher un utilisateur par ID",
+        "description" : "Cette méthode permet de chercher un utilisateur par son ID",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Le utilisateur a ete trouve dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/UtilisateurDto"
+            }
+          },
+          "404" : {
+            "description" : "Aucun utilisateur n'existe dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/utilisateurs/all" : {
+      "get" : {
+        "summary" : "Renvoie la liste des utilisateurs",
+        "description" : "Cette méthode permet de chercher et renvoyer la liste des utilisateurs qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "La liste des utilisateurs / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/UtilisateurDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/utilisateurs/create" : {
+      "post" : {
+        "summary" : "Enregistrer un utilisateur",
+        "description" : "Cette méthode permet d'enregistrer ou modifier un utilisateur",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "L'objet utilisateur cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/UtilisateurDto"
+            }
+          },
+          "400" : {
+            "description" : "L'objet utilisateur n'est pas valide"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/utilisateurs/delete/{idUtilisateur}" : {
+      "delete" : {
+        "summary" : "Supprimer un utilisateur",
+        "description" : "Cette méthode permet de supprimer un utilisateur par ID",
+        "operationId" : "delete",
+        "responses" : {
+          "200" : {
+            "description" : "Le utilisateur a ete supprime"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/ventes/all" : {
+      "get" : {
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/VentesDto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/ventes/create" : {
+      "post" : {
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/VentesDto"
+            }
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/ventes/delete/{idVente}" : {
+      "delete" : {
+        "operationId" : "delete",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/onlinecheckcashing/v1/ventes/{idVente}" : {
+      "get" : {
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/VentesDto"
+            }
+          }
+        }
+      }
+    },
+    "onlinecheckcashing/v1/auth/authenticate" : {
+      "post" : {
+        "operationId" : "authenticate",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AuthenticationRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/AuthenticationResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "AdminDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "adresse" : {
+          "$ref" : "#/definitions/AdresseDto"
+        },
+        "idBanque" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "photo" : {
+          "type" : "string"
+        },
+        "mail" : {
+          "type" : "string"
+        },
+        "numTel" : {
+          "type" : "string"
+        },
+        "rib" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AdresseDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "adresse" : {
+          "type" : "string"
+        },
+        "ville" : {
+          "type" : "string"
+        },
+        "pays" : {
+          "type" : "string"
+        },
+        "idBanque" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "AuthenticationRequest" : {
+      "type" : "object",
+      "properties" : {
+        "login" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AuthenticationResponse" : {
+      "type" : "object",
+      "properties" : {
+        "accessToken" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BanqueDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "adresse" : {
+          "$ref" : "#/definitions/AdresseDto"
+        },
+        "photo" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "numTel" : {
+          "type" : "string"
+        },
+        "steWeb" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CategoryDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "designation" : {
+          "type" : "string"
+        },
+        "idBanque" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "ChequeDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "codeCheque" : {
+          "type" : "string"
+        },
+        "designation" : {
+          "type" : "string"
+        },
+        "prixUnitaireHt" : {
+          "type" : "number"
+        },
+        "tauxTva" : {
+          "type" : "number"
+        },
+        "prixUnitaireTtc" : {
+          "type" : "number"
+        },
+        "photo" : {
+          "type" : "string"
+        },
+        "idBanque" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "category" : {
+          "$ref" : "#/definitions/CategoryDto"
+        }
+      }
+    },
+    "ClientDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "adresse" : {
+          "$ref" : "#/definitions/AdresseDto"
+        },
+        "photo" : {
+          "type" : "string"
+        },
+        "mail" : {
+          "type" : "string"
+        },
+        "numTel" : {
+          "type" : "string"
+        },
+        "rib" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CommandeAdminDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "dateCommande" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "admin" : {
+          "$ref" : "#/definitions/AdminDto"
+        },
+        "etatCommande" : {
+          "type" : "string",
+          "enum" : [ "EN_PREPARATION", "VALIDEE", "LIVREE" ]
+        },
+        "ligneCommandeAdmins" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LigneCommandeAdminDto"
+          }
+        },
+        "commandeLivree" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "CommandeClientDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "dateCommande" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "client" : {
+          "$ref" : "#/definitions/ClientDto"
+        },
+        "etatCommande" : {
+          "type" : "string",
+          "enum" : [ "EN_PREPARATION", "VALIDEE", "LIVREE" ]
+        },
+        "commandeLivree" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "LigneCommandeAdminDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "cheque" : {
+          "$ref" : "#/definitions/ChequeDto"
+        },
+        "commandeAdmin" : {
+          "$ref" : "#/definitions/CommandeAdminDto"
+        },
+        "quantite" : {
+          "type" : "number"
+        },
+        "prixunitaire" : {
+          "type" : "number"
+        }
+      }
+    },
+    "LigneCommandeClientDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "cheque" : {
+          "$ref" : "#/definitions/ChequeDto"
+        },
+        "commandeClient" : {
+          "$ref" : "#/definitions/CommandeClientDto"
+        },
+        "quantite" : {
+          "type" : "number"
+        },
+        "prixUnitaire" : {
+          "type" : "number"
+        }
+      }
+    },
+    "LigneVenteDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "vente" : {
+          "$ref" : "#/definitions/VentesDto"
+        },
+        "quantite" : {
+          "type" : "number"
+        },
+        "idBanque" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "prixUnitaire" : {
+          "type" : "number"
+        }
+      }
+    },
+    "MvtSldDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "dateSld" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "quantite" : {
+          "type" : "number"
+        },
+        "cheque" : {
+          "$ref" : "#/definitions/ChequeDto"
+        },
+        "idBanque" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sourceMvt" : {
+          "type" : "string",
+          "enum" : [ "COMMANDE_CLIENT", "COMMANDE_ADMIN", "VENTE" ]
+        },
+        "typeSld" : {
+          "type" : "string",
+          "enum" : [ "ENTREE", "SORTIE", "CORRECTION_POS", "CORRECTION_NEG" ]
+        }
+      }
+    },
+    "UtilisateurDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "dateDeNaissance" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "motDePasse" : {
+          "type" : "string"
+        },
+        "adresse" : {
+          "$ref" : "#/definitions/AdresseDto"
+        },
+        "photo" : {
+          "type" : "string"
+        },
+        "banque" : {
+          "$ref" : "#/definitions/BanqueDto"
+        }
+      }
+    },
+    "VentesDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "dateVente" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "commentaire" : {
+          "type" : "string"
+        },
+        "ligneVentes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LigneVenteDto"
+          }
+        }
+      }
+    }
+  }
+}

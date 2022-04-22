@@ -19,19 +19,19 @@
   </div>
 </div> -->
 
-<mdb-carousel class=" banks flex-spacer d-none d-xl-block" [animation]="'slide'">
-  <mdb-carousel-item class="bank opacity-50">
+<mdb-carousel class=" banks flex-spacer d-none d-xl-block" [animation]="'slide'" >
+  <mdb-carousel-item class="bank opacity-80">
     <!--First page-->
-          <mat-card class="background">
+          <mat-card class="background bg-image">
             <mat-card-header>
-              <img mat-card-avatar src="https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+              <img mat-card-avatar class="img-fluid" src="https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
               <mat-card-title>Banks</mat-card-title>
               <mat-card-subtitle>-List of banks we're working with-</mat-card-subtitle>
             </mat-card-header>
           </mat-card>
       </mdb-carousel-item>
 
-    <mdb-carousel-item class="bank opacity-75" *ngFor="let item of data">
+    <mdb-carousel-item class="bank opacity-80" *ngFor="let item of data">
   <!--STB-->
         <mat-card>
           <mat-card-header>

@@ -9,9 +9,25 @@ html {
   height: 100%;
 }
 
-.about-section {
-  padding: 200px;
-  text-align: center;
-  background-color: #16151a;
+
+
+.about-section-banner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: left;
   color: white;
+  margin-top: 3px;
+   max-height:25px;
+   background:#16151a;
 }
+
+.about-section-banner > p{
+  margin-top: 12px;
+}
+
+h1{
+  color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
+

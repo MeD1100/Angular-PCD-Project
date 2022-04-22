@@ -11,30 +11,30 @@
       <form>
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Nom">
+            <input type="text" class="form-control" id="Nom" placeholder="Nom" [(ngModel)]="client.Nom">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="RIB">
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Prénom">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Adresse">
+            <input type="text" class="form-control" id="RIB" placeholder="RIB" [(ngModel)]="client.RIB">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="E-mail">
+            <input type="text" class="form-control" id="Prenom" placeholder="Prenom"  [(ngModel)]="client.Prenom">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Ville">
+            <input type="text" class="form-control" id="Adresse" placeholder="Adresse" [(ngModel)]="client.Adresse">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <input type="text" class="form-control" id="Email" placeholder="Email"  [(ngModel)]="client.Email">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="Ville" placeholder="Ville"  [(ngModel)]="client.Ville">
           </div>
           <div class="row mb-3">
             <div class="col ml-1 mt-3">
-              <input type="text" class="form-control" placeholder="Téléphone">
+              <input type="text" class="form-control" id="Telephone" placeholder="Telephone" [(ngModel)]="client.Telephone">
             </div>
             <div class="col">
               &nbsp;

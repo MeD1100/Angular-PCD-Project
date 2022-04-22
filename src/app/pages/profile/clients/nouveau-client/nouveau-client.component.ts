@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from '../client';
+import { AddChequeService } from 'src/app/service/chequeService/cheque.service';
 
 @Component({
   selector: 'app-nouveau-client',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NouveauClientComponent implements OnInit {
 
+  client: Client = new Client();
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

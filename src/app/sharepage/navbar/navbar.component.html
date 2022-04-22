@@ -1,33 +1,61 @@
-<nav class="header_bottom d-flex p-2 align-items-center sticky-top main-navigation" style="position: fixed; top:0; width:100%;">
 
-
-  <div class="header_bottom_left d-flex align-items-center" style="margin-left: 10%;">
-    <div class="header_buttom_flag mr-4" >
-      <i class="fa fa-bank fa-lg"></i>
-    </div>
-    <div class="header_bottom_text ml-2">
-      <span class="header_left_first_line">Dedicated to</span>
-      <div class="header_bottom_container">
-        <img class="header_left_second_line" src="https://cdn-icons-png.flaticon.com/512/555/555666.png" style="max-width: 20px; min-width: 20px;" alt="icon tn">
-        <span class="header_left_second_line" style="margin-left: 1%;"><strong>Banks</strong></span>
+<nav class="navbar navbar-light bg-light sticky-top main-navigation"  style="z-index: 6;">
+    <div class="col-md-6 header_bottom_left d-flex justify-content-start align-items-center">
+      <div class="mr-4"><i class="fa fa-bank fa-lg"></i></div>
+      <div class=" ml-2">
+        <span class="header_left_first_line">Dedicated to</span>
+        <div class="header_bottom_container">
+          <img class="header_left_second_line" src="https://cdn-icons-png.flaticon.com/512/555/555666.png" style="max-width: 20px;" alt="icon tn">
+          <span class="header_left_second_line ml-2"><strong>Banks</strong></span>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="col-md-6 text-right">
+        <a routerLink="/signup" routerLinkActive="active-link"><button type="button" class="btn btn-primary" style="margin-right: 5px;">SignUp</button></a>
+        <a routerLink="/login" routerLinkActive="active-link"><button type="button" class="btn btn-dark"style="margin-left: 5px;">Login</button></a>
+    </div>
+</nav>
 
-  <div class="header_bottom_buttons justify-content-end " style="margin-right: 10%;">
-    <a routerLink="/signup" routerLinkActive="active-link"><button type="button" class="btn btn-primary" style="margin-right: 5px;">SignUp</button></a>
-    <a routerLink="/login" routerLinkActive="active-link"><button type="button" class="btn btn-dark"style="margin-left: 5px;">Login</button></a>
+
+<nav class="navbar navbar-expand-lg navbar-dark"  style="z-index: 9; background-color: #16151a;" >
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <div class="mt-2">
+        <h1><strong>OBCC</strong></h1>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto d-flex mt-2">
+        <li class="nav-item pr-2 ">
+          <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"><h2>Home</h2></a>
+        </li>
+        <li class="nav-item pr-2">
+          <a class="nav-link" routerLink="/profile/page" tabindex="-1" aria-disabled="true" routerLinkActive="active-link"><h2>Profile</h2></a>
+        </li>
+        <li class="nav-item pr-2">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active-link"><h2>AboutUs</h2></a>
+        </li>
+        <li class="nav-item pr-2">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link"><h2>Contact</h2></a>
+        </li>
+
+      </ul>
+    </div>
   </div>
 </nav>
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top" (scroll)="onWindowScroll();" style="background-color: #16151a;">
+
+
+<!--
+<nav class="navbar navbar-expand-lg navbar-dark" (scroll)="onWindowScroll();" style="z-index: 9; background-color: #16151a;">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/">
       <div class="d-flex">
-        <!-- <h1 class="font-weight-bold mr-2 px-3" style="color:#ffffff; background-color:#957bda"> $ </h1>
-        <h1 style="color: #957bda">ONLINE</h1> -->
         <a class="navbar-brand" style="color: #ffcc9d;" routerLink="/">
           <img src="https://cdn-icons-png.flaticon.com/512/1102/1102561.png" width="40" height="40" class="d-inline-block align-top" alt="brand">
           ONLINE
@@ -42,7 +70,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"><button type="button" class="btn btn-dark">Home</button></a>
         </li>
-        <li class="nav-item"> <!-- disabled--> <!-- id="gray-disabled"-->
+        <li class="nav-item">
           <a class="nav-link" routerLink="/profile/page" tabindex="-1" aria-disabled="true" routerLinkActive="active-link"><button type="button" class="btn btn-dark">Profile</button></a>
         </li>
         <li class="nav-item">
@@ -55,4 +83,4 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
