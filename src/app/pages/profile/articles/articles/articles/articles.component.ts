@@ -13,7 +13,7 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  nouvelArticle(): void{
-    this.router.navigate(['profile/nouvelarticle']);
+  nouvelCheque(): void{
+    this.router.navigate(['profile/nouvelcheque']);
   }
 }

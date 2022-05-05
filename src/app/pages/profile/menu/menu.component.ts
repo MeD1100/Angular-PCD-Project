@@ -33,19 +33,19 @@ export class MenuComponent implements OnInit {
   },
     {
       id: '2',
-      titre: 'Articles',
+      titre: 'Cheques',
       icon: 'fas fa-boxes',
       url: '',
       sousMenu: [
         {
           id: '21',
-          titre: 'Articles',
+          titre: 'Cheques',
           icon: 'fas fa-boxes',
-          url: 'profile/articles'
+          url: 'profile/cheques'
         },
         {
           id: '22',
-          titre: 'Mouvements du stock',
+          titre: 'Mouvements du solde',
           icon: 'fab fa-stack-overflow',
           url: 'profile/mvtsld'
         }

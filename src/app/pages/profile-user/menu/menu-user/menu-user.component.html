@@ -1,0 +1,27 @@
+<div class="accordion" id="accordionExample" >
+  <div class="accordion-item" *ngFor="let menu of MenuProperties">
+    <h2 class="accordion-header" id="menu{{menu.id}}">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + menu.id" aria-expanded="true" aria-controls="collapseOne">
+        <i class="{{menu.icon}}"></i>&nbsp;
+        {{menu.titre}}
+      </button>
+    </h2>
+    <div id="collapse{{menu.id}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'menu' + menu.id" data-bs-parent="#accordionExample">
+      <div class="card">
+        <ul class="list-group list-group-flush d-flex justify-content-center" style="height: 40px; padding-left: 30px;" *ngFor="let sousMenu of menu.sousMenu" [ngClass]="{'text-white bg-primary': sousMenu.active, '': !sousMenu.active}">
+          <a href="javascript:void(0);" (click)="navigate(sousMenu)" style="color: inherit;">
+            <i class="{{sousMenu.icon}}"></i>&nbsp;
+            {{sousMenu.titre}}
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row-md text-center" style=" margin-top: 100px;">
+    <button type="button" class="btn btn-warning"><strong>Upload Cheque</strong></button>
+  </div>
+  <div class="row-md mt-2 text-center">
+    <button type="button" class="btn btn-primary">Guide</button>
+  </div>

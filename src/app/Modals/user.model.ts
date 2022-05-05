@@ -1,5 +1,10 @@
-export class User {
-  username!: string;
+export class UserModel {
+  id!: number;
+  firstName!: string;
+  lastName!: string;
+  email!: string;
   password!: string;
-  roles!: string[];
+  mobileNumber!: string;
+  token?: string;
+  profile!:number;
 }

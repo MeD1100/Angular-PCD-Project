@@ -11,30 +11,30 @@
       <form>
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" id="Nom" placeholder="Nom" [(ngModel)]="client.Nom">
+            <input type="text" class="form-control" id="Nom" placeholder="Nom">
           </div>
           <div class="col">
-            <input type="text" class="form-control" id="RIB" placeholder="RIB" [(ngModel)]="client.RIB">
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col">
-            <input type="text" class="form-control" id="Prenom" placeholder="Prenom"  [(ngModel)]="client.Prenom">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" id="Adresse" placeholder="Adresse" [(ngModel)]="client.Adresse">
+            <input type="text" class="form-control" id="RIB" placeholder="RIB">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" id="Email" placeholder="Email"  [(ngModel)]="client.Email">
+            <input type="text" class="form-control" id="Prenom" placeholder="Prenom">
           </div>
           <div class="col">
-            <input type="text" class="form-control" id="Ville" placeholder="Ville"  [(ngModel)]="client.Ville">
+            <input type="text" class="form-control" id="Adresse" placeholder="Adresse">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <input type="text" class="form-control" id="Email" placeholder="Email">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="Ville" placeholder="Ville">
           </div>
           <div class="row mb-3">
             <div class="col ml-1 mt-3">
-              <input type="text" class="form-control" id="Telephone" placeholder="Telephone" [(ngModel)]="client.Telephone">
+              <input type="text" class="form-control" id="Telephone" placeholder="Telephone">
             </div>
             <div class="col">
               &nbsp;
@@ -46,7 +46,7 @@
 
   </div>
   <div class="col-md-12 text-right">
-    <a routerLink="/profile/articles"><button class="btn btn-danger mr-3">
+    <a routerLink="/profile/clients"><button class="btn btn-danger mr-3">
       <i class="fas fa-ban"></i>&nbsp;Annuler
     </button></a>
     <button class="btn btn-primary">

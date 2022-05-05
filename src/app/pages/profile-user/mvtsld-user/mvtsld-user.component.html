@@ -1,0 +1,44 @@
+<div class="col">
+  <div class="row  m-3">
+    <div class="col-md-8 p-0">
+      <h1>Mouvements des soldes</h1>
+    </div>
+    <div class="col-md-4 text-right">
+      <div class="row">
+        <app-boutton-action [isNouveauVisible]="false" [isImporterVisible]="false" [isExporterVisible]="false"></app-boutton-action>
+      </div>
+    </div>
+  </div>
+  <div class="col m-3">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <div class="accordion-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <app-detail-mvtsld-user></app-detail-mvtsld-user>
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="max-height: 300px; overflow-y: scroll;">
+          <div class="card-body">
+            <app-detail-mvtsld-histo-user></app-detail-mvtsld-histo-user>
+            <app-detail-mvtsld-histo-user></app-detail-mvtsld-histo-user>
+            <app-detail-mvtsld-histo-user></app-detail-mvtsld-histo-user>
+            <app-detail-mvtsld-histo-user></app-detail-mvtsld-histo-user>
+            <app-detail-mvtsld-histo-user></app-detail-mvtsld-histo-user>
+            <app-detail-mvtsld-histo-user></app-detail-mvtsld-histo-user>
+            <app-detail-mvtsld-histo-user></app-detail-mvtsld-histo-user>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-12 text-center">
+      <app-pagination></app-pagination>
+    </div>
+  </div>
+
+</div>

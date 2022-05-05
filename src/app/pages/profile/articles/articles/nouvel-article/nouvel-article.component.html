@@ -5,41 +5,52 @@
   <hr>
   <div class="col-md-12">
     <div class="col-md-12 mb-3">
-      <h2><i class="fas fa-info-circle blue-color"></i>&nbsp;Information du chèque</h2>
+      <h2><i class="fas fa-info-circle blue-color"></i>&nbsp;Création d'un nouveau chèque</h2>
     </div>
-    <div class="col-md-12">
-      <form>
+    <div [hidden]="submitted" class="col-md-12">
+      <form (ngSubmit)="onSubmit()">
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="codearticle" [(ngModel)]="cheque.codearticle" name="codearticle">
+            <label for="name">Numéro du cheque</label>
+            <input type="text" class="form-control" placeholder="numcheque" required [(ngModel)]="cheque.numcheque" name="numcheque">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="designation" [(ngModel)]="cheque.designation" name="designation">
+            <label for="name">Rib du titulaire du chèque</label>
+            <input type="text" class="form-control" placeholder="rib" required [(ngModel)]="cheque.rib" name="rib">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="prixht" [(ngModel)]="cheque.prixht" name="prixht">
+            <label for="name">Nom de la banque</label>
+            <input type="text" class="form-control" placeholder="banque" required [(ngModel)]="cheque.banque" name="banque">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="tauxtva" [(ngModel)]="cheque.tauxtva" name="tauxtva">
+            <label for="name">Date</label>
+            <input type="text" class="form-control" placeholder="date" required [(ngModel)]="cheque.date" name="date">
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <input type="text" class="form-control" placeholder="prixttc" [(ngModel)]="cheque.prixttc" name="prixttc">
+            <label for="name">Montant</label>
+            <input type="text" class="form-control" placeholder="montant" required [(ngModel)]="cheque.montant" name="montant">
           </div>
+        </div>
+        <div class="col-md-12 text-right">
+          <a routerLink="/profile/cheques"><button class="btn btn-danger mr-3">
+            <i class="fas fa-ban"></i>&nbsp;Annuler
+          </button></a>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i>&nbsp;Enregistrer
+          </button>
         </div>
       </form>
     </div>
 
   </div>
-  <div class="col-md-12 text-right">
-    <a routerLink="/profile/articles"><button class="btn btn-danger mr-3">
-      <i class="fas fa-ban"></i>&nbsp;Annuler
-    </button></a>
-    <button type="submit" class="btn btn-primary" (click)="addCheque()">
-      <i class="fas fa-save"></i>&nbsp;Enregistrer
-    </button>
+  <div [hidden]="!submitted">
+    <h4>Le chèque a été ajouté avec <strong>succés</strong>!</h4>
   </div>
+
 </div>
+
+

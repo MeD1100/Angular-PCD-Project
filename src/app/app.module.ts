@@ -50,6 +50,48 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { AdminComponent } from './pages/profile/admins/admin/admin.component';
 import { DetailAdminComponent } from './pages/profile/admins/detail-admin/detail-admin.component';
 import { NouveauAdminComponent } from './pages/profile/admins/nouveau-admin/nouveau-admin.component';
+import { ProfileUserComponent } from './pages/profile-user/profile-user.component';
+import { MenuUserComponent } from './pages/profile-user/menu/menu-user/menu-user.component';
+import { ArticlesUserComponent } from './pages/profile-user/articles-user/articles-user/articles-user/articles-user.component';
+import { DetailArticleUserComponent } from './pages/profile-user/articles-user/detail-article-user/detail-article-user.component';
+import { MvtsldUserComponent } from './pages/profile-user/mvtsld-user/mvtsld-user.component';
+import { DetailMvtsldUserComponent } from './pages/profile-user/mvtsld-user/detail-mvtsld-user/detail-mvtsld-user.component';
+import { DetailMvtsldHistoUserComponent } from './pages/profile-user/mvtsld-user/detail-mvtsld-histo-user/detail-mvtsld-histo-user.component';
+import { CategoriesUserComponent } from './pages/profile-user/categories-user/categories-user.component';
+import { HeaderUserComponent } from './pages/profile-user/header-user/header-user.component';
+import { PageProfilUserComponent } from './pages/profile-user/page-profil-user/page-profil-user.component';
+import { ChangerMdpUserComponent } from './pages/profile-user/changer-mdp-user/changer-mdp-user.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION,PB_DIRECTION, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { UpdateComponent } from './pages/profile/update/update.component';
+import { DetailsEditingComponent } from './pages/profile/update/details-editing/details-editing.component';
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: "#008aff",
+  bgsOpacity: 0.5,
+  bgsPosition: "bottom-right",
+  bgsSize: 60,
+  bgsType: "ball-spin-clockwise",
+  blur: 5,
+  delay: 0,
+  fastFadeOut: true,
+  fgsColor: "#008aff",
+  fgsPosition: "center-center",
+  fgsSize: 60,
+  fgsType: "ball-spin-clockwise",
+  gap: 24,
+  logoPosition: "center-center",
+  logoSize: 120,
+  logoUrl: "assets/images/Dollar-logo-on-transparent-background-PNG.png",
+  masterLoaderId: "master",
+  overlayBorderRadius: "0",
+  overlayColor: "rgba(40, 40, 40, 0.8)",
+  pbColor: "#008aff",
+  pbDirection: "ltr",
+  pbThickness: 3,
+  hasProgressBar: true
+  };
+
 
 @NgModule({
   declarations: [
@@ -87,7 +129,20 @@ import { NouveauAdminComponent } from './pages/profile/admins/nouveau-admin/nouv
     PageProfilComponent,
     AdminComponent,
     DetailAdminComponent,
-    NouveauAdminComponent
+    NouveauAdminComponent,
+    ProfileUserComponent,
+    MenuUserComponent,
+    ArticlesUserComponent,
+    DetailArticleUserComponent,
+    MvtsldUserComponent,
+    DetailMvtsldUserComponent,
+    DetailMvtsldHistoUserComponent,
+    CategoriesUserComponent,
+    HeaderUserComponent,
+    PageProfilUserComponent,
+    ChangerMdpUserComponent,
+    UpdateComponent,
+    DetailsEditingComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -105,8 +160,13 @@ import { NouveauAdminComponent } from './pages/profile/admins/nouveau-admin/nouv
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyBzpYcXpT2lLSHW90qVD_LLIbIfW6418a8',
       libraries: ['places']
+    }),
+    NgbModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule.forRoot({
+      showForeground: false,
     })
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]

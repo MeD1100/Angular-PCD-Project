@@ -1,0 +1,21 @@
+<h2>Détails du cheque</h2>
+
+<hr/>
+<div *ngIf="cheque">
+  <div>
+    <label><b>numéro cheque: </b></label> {{cheque.numcheque}}
+  </div>
+  <div>
+    <label><b>numéro rib du titulaire: </b></label> {{cheque.rib}}
+  </div>
+  <div>
+    <label><b>nom de la banque: </b></label> {{cheque.banque}}
+  </div>
+  <div>
+    <label><b>montant transféré: </b></label> {{cheque.montant}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Retourner</button><br>

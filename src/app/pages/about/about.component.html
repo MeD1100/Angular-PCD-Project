@@ -1,85 +1,145 @@
 
+<ngx-ui-loader></ngx-ui-loader>
 
 
-<div class="about-section">
+<div>
   <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" >
     <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
   </agm-map>
 </div>
 
-<h2 style="text-align:center">Our Team</h2>
-<div class="row">
-  <div class="column">
+<h1 class="text-center" style="margin-top: 150px;"><strong>Que somme nous? Qu'est ce OBCC?</strong></h1>
+
+
+<h1 class="text-center" style="margin-top: 150px; margin-bottom: 50px;"><strong>L'équipe de développement</strong></h1>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 d-flex justify-content-center mt-3">
+  <div class="col mb-4">
     <div class="card">
-      <img src="assets\images\241285790_3295493580677452_4354117825348335544_n.jpg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Ahmed Rekik</h2>
-        <p>2nd year student at ENSI specializing in Artificial Intelligence.</p>
-        <p>ahmed.rekik@ensi-uma.tn</p>
-        <p><button type="button" class="btn btn-warning button">Contact</button></p>
+      <img src="assets\images\241285790_3295493580677452_4354117825348335544_n.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Ahmed Rekik</strong></h5>
+        <p class="card-text">Future ingénieur specialisé en Intelligence Artificielle</p>
+      </div>
+      <div class="card-footer text-center">
+        <small class="text-muted">ONLINE Bank Check Cashing</small>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="assets\images\241624429_4428349000562720_5530380254534486233_n (3).jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Mohamed Rhimi</strong></h5>
+        <p class="card-text">Future ingénieur specialisé en Internet Of Things</p>
+      </div>
+      <div class="card-footer text-center">
+        <small class="text-muted">ONLINE Bank Check Cashing</small>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="assets\images\241662190_4315499691890983_3163594389873127614_n.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Marwan Ghouma</strong></h5>
+        <p class="card-text">Futur ingénieur spécialisé en Finances et systèmes bancaires.</p>
+      </div>
+      <div class="card-footer text-center">
+        <small class="text-muted">ONLINE Bank Check Cashing</small>
       </div>
     </div>
   </div>
 
-  <div class="column">
-    <div class="card">
-      <img src="assets\images\241624429_4428349000562720_5530380254534486233_n (3).jpg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Mohamed Rhimi</h2>
-        <p>2nd year student at ENSI specializing in Internet of Things & Networks.</p>
-        <p>mohamed.rhimi@ensi-uma.tn</p>
-        <p><button type="button" class="btn btn-warning button">Contact</button></p>
+  </div>
+
+  <script language="JavaScript" type="text/javascript">
+    $(document).ready(function() {
+  //Set the carousel options
+  $('#quote-carousel').carousel({
+    pause: true,
+    interval: 4000,
+  });
+});
+  </script>
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <head>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  </head>
+
+  <div class="container" style="margin-top: 100px;">
+    <div class="row">
+      <div class='col-md-offset-2 col-md-8 text-center'>
+      <h2>Les commentaires de clients</h2>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-offset-2 col-md-8'>
+        <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+          <!-- Bottom Carousel Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#quote-carousel" data-slide-to="1"></li>
+            <li data-target="#quote-carousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Carousel Slides / Quotes -->
+          <div class="carousel-inner">
+
+            <!-- Quote 1 -->
+            <div class="item active">
+              <blockquote>
+                <div class="row">
+                  <div class="col-sm-3 text-center">
+                    <img class="img-circle" src="http://www.reactiongifs.com/r/overbite.gif" style="width: 100px;height:100px;">
+                    <!--<img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" style="width: 100px;height:100px;">-->
+                  </div>
+                  <div class="col-sm-9">
+                    <p>This plateform is so secure and trustworthy, I highly recommand it!</p>
+                    <small>Mr. Andres Leopine</small>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <!-- Quote 2 -->
+            <div class="item">
+              <blockquote>
+                <div class="row">
+                  <div class="col-sm-3 text-center">
+                    <img class="img-circle" src="https://pbs.twimg.com/profile_images/966402634650390528/dXzB-IOj_400x400.jpg" style="width: 100px;height:100px;">
+                  </div>
+                  <div class="col-sm-9">
+                    <p>Je vais plus aux banques pour encaisser un chèque. C démodé de faire ça pour l'amour de dieu.. Et c'est grace à vous!</p>
+                    <small>Mr. Rabye Bouden</small>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <!-- Quote 3 -->
+            <div class="item">
+              <blockquote>
+                <div class="row">
+                  <div class="col-sm-3 text-center">
+                    <img class="img-circle" src="https://stringfixer.com/files/108032842.jpg" style="width: 100px;height:100px;">
+                  </div>
+                  <div class="col-sm-9">
+                    <p>Deux mots pas plus: Plateforme extraordinaire..</p>
+                    <small>Mme. Alyaa Wooz</small>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Carousel Buttons Next/Prev -->
+          <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+          <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="assets\images\241662190_4315499691890983_3163594389873127614_n.jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Marwan Ghouma</h2>
-        <p>2nd year student at ENSI specializing in Finance.</p>
-        <p>marwan.ghouma@ensi-uma.tn</p>
-        <p><button type="button" class="btn btn-warning button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<h2 class="text-center mt-3">What our dear users say</h2>
-<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-    <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
-    </div>
-    <div class="item">
-      <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
-    </div>
-    <div class="item">
-      <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-

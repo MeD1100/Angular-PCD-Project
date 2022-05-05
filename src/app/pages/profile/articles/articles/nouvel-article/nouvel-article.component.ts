@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddChequeService } from 'src/app/service/chequeService/cheque.service';
-import { Cheque } from '../cheque';
+import { Cheque } from 'src/app/service-components/cheque';
+import { ChequeService } from 'src/app/service-components/cheque.service';
 
 @Component({
   selector: 'app-nouvel-article',
@@ -11,16 +11,35 @@ import { Cheque } from '../cheque';
 export class NouvelArticleComponent implements OnInit {
 
   cheque: Cheque = new Cheque();
-  constructor(private addChequeService: AddChequeService,
-    private router: Router ) { }
+  submitted = false;
 
-  ngOnInit(): void {
+  constructor(private chequeService: ChequeService,
+    private router: Router) { }
+
+  ngOnInit() {
   }
 
-  addCheque(){
-    console.log(this.cheque);
-    this.addChequeService.addCheque(this.cheque).subscribe();
-    this.router.navigate(['profile/articles'])
+  newCheque(): void {
+    this.submitted = false;
+    this.cheque = new Cheque();
+  }
+
+  save() {
+    this.chequeService
+    .createCheque(this.cheque).subscribe( data => {
+      console.log(data)
+      this.cheque = new Cheque();
+      this.gotoList();
+    })
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+
+  gotoList() {
+    this.router.navigate(['/profile/cheques']);
   }
 
 }
